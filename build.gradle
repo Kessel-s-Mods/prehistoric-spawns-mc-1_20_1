@@ -7,7 +7,7 @@ plugins {
 }
 
 version = '3.0'
-group = 'com.jayzx535.prehistoricspawns'
+group = 'com.kesselot.ancientearth'
 
 base {
     archivesName = "${mod_id}-${mod_version}-forge"
@@ -32,39 +32,39 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 			property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', "${project.projectDir}/build/createSrgToMcp/output.srg"
-            property 'forge.enabledGameTestNamespaces', 'prehistoricspawns'
+            property 'forge.enabledGameTestNamespaces', 'ancientearth'
 
             mods {
-                prehistoricspawns {
+                ancientearth {
                     source sourceSets.main
                 }
             }
         }
 
         client {
-            property 'forge.enabledGameTestNamespaces', 'prehistoricspawns'
+            property 'forge.enabledGameTestNamespaces', 'ancientearth'
         }
 
         server {
-            property 'forge.enabledGameTestNamespaces', 'prehistoricspawns'
+            property 'forge.enabledGameTestNamespaces', 'ancientearth'
             args '--nogui'
         }
 
         gameTestServer {
-            property 'forge.enabledGameTestNamespaces', 'prehistoricspawns'
+            property 'forge.enabledGameTestNamespaces', 'ancientearth'
         }
 
         data {
             workingDirectory project.file('run-data')
 
-            args '--mod', 'prehistoricspawns', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'ancientearth', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
         }
     }
 }
 
 mixin {
-    add sourceSets.main, "prehistoricspawns.refmap.json"
-    config "prehistoricspawns.mixins.json"
+    add sourceSets.main, "ancientearth.refmap.json"
+    config "ancientearth.mixins.json"
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
@@ -85,25 +85,23 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 	
 	// Fossils and Archeology
-	implementation fg.deobf("curse.maven:fossils-223908:6562578")
+implementation fg.deobf("curse.maven:fossils-223908:7484415")
 	
 	// Mixins
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 	
 	// Architectury
-	implementation fg.deobf("curse.maven:architectury-api-419699:5137931")
+implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
 	
 	// Geckolib
-	implementation fg.deobf("curse.maven:geckolib-388172:4181370")
+implementation fg.deobf("curse.maven:geckolib-388172:7553267")
+
 	
 	// More Hitboxes
-	implementation fg.deobf("curse.maven:more-hitboxes-1115989:6296346")
+implementation fg.deobf("curse.maven:more-hitboxes-1115989:6942239")
 	
 	// Terrablender
-	implementation fg.deobf("curse.maven:terrablender-563928:3957976")
-	
-	// CorviCraft Spawn Utility
-	implementation fg.deobf("curse.maven:corvicraft-spawn-utility-960698:6293260")
+implementation fg.deobf("curse.maven:terrablender-563928:6290448")	
 	
 }
 
