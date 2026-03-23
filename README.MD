@@ -1,0 +1,1 @@
+This mod, Ancient Earth, is a reimplementation of [Prehistoric Spawns](https://github.com/JayZX535/prehistoric-spawns-mc) by JayZX535 from 1.18.2 to 1.20.1 using the 1.19+ Biome Modifiers rather than Corvicraft. Because of this much of the code has been rewritten, however most of the values are the same or similar. The SpongeMixins and AccessTransformers are also the same.
